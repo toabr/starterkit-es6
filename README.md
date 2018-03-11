@@ -22,8 +22,9 @@ npm run build
 
 ### Features:
 
+* Development via [webpack](https://github.com/webpack/webpack)
 * ES6 Support via [babel-loader](https://github.com/babel/babel-loader)
 * LESS Support via [less-loader](https://github.com/webpack-contrib/less-loader)
 
 #
-<small>Credits: [Traversy Media](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)</small>
+<small>Credits: [Ihatetomatoes](https://www.youtube.com/playlist?list=PLkEZWD8wbltnRp6nRR8kv97RbpcUdNawY)</small>
