@@ -26,6 +26,5 @@
     "webpack-dev-server": "^2.11.1",
     "html-webpack-plugin": "^3.0.4"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
