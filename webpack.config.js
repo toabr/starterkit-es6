@@ -1,3 +1,5 @@
+'use strict';
+
 const debug = process.env.NODE_ENV !== "production";
 const webpack = require('webpack');
 const path = require('path');
@@ -27,7 +29,12 @@ module.exports = {
     },{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: "babel-loader",
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['es2015']
+        }
+      }
     }]
   },
   devServer: {
