@@ -6,8 +6,42 @@
 <body>
 
 <div id="root">
- <h1>Javascript Application Starterkit</h1>
-</div>
+  <div class="container">
+
+  <div class="menu-wrap">
+
+    <div class="logo">
+      <a href="https://torstenabraham.de">toabr</a>
+    </div>
+    <div class="slogan">
+      <a href="https://torstenabraham.de"><%= htmlWebpackPlugin.options.title %></a>
+    </div>
+
+    <div class="menu">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="https://torstenabraham.de/contact">Contact</a></li>
+        <li><a href="https://github.com/toabr/starterkit-es6">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="content-wrap">
+    <header>
+      <button id="menu-btn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <h1><%= htmlWebpackPlugin.options.title %></h1>
+    </header>
+
+    <footer></footer>
+  </div>
+
+
+  </div> <!-- END container -->
+</div> <!-- END #root -->
 
 </body>
 </html>

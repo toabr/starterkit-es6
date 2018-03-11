@@ -37,11 +37,11 @@ module.exports = {
   plugins: debug ? [
     new HtmlWebpackPlugin({
       title: 'ES6 Starterkit',
-      // minify: {
-        //   collapseWhitespace: true
-        // },
+      minify: {
+        collapseWhitespace: true
+      },
       filename: './../index.html',
-      // hash: true,
+      hash: true,
       template: './src/index.html',
     }),
     extractLESS,

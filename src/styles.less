@@ -1,8 +1,157 @@
-@primary: dodgerblue;
-@secondary: tomato;
+@text:        #fefefe;
+@primary:     dodgerblue;
+@secondary:   tomato;
+@lighter:     rgba(255,255,255,0.2);
+@darker:      rgba(0,0,0,0.5);
 
+html,body,#root,.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  background: @secondary;
+  color: @text;
+  font-family: helvetica, sans-serif;
+}
 
 #root {
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  background: transparent;
+}
+
+.menu-wrap {
+  background: transparent;
+}
+
+.content-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
   background: @primary;
-  color: white;
+  min-height: 100vh;
+  width: 100%;
+  // transitions
+  // overflow-y: scroll;
+  // overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+header,.content,footer {
+  padding: 18px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  min-height: 80px;
+  width: 100%;
+  padding: 18px;
+  box-sizing: border-box;
+  background: @darker;
+  border-top: 1px solid @text;
+}
+
+header {
+  h1 {
+    text-align: center;
+    padding: 0 50px 8px;
+    border-bottom: 1px solid @text;
+  }
+}
+
+// ### MENU ###
+// =============================================================================
+#menu-btn {
+  cursor: hand;
+  position: fixed;
+  z-index: 1000;
+  width: 50px;
+  height: 45px;
+  border: 1px solid @text;
+  outline: none;
+  text-indent: 2.5em;
+  font-size: 1.5em;
+  color: transparent;
+  background: transparent;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  .bar {
+    display: block;
+    background: @text;
+    height: 3px;
+    width: 100%;
+    margin: 8px 0;
+  }
+}
+
+.menu-wrap {
+  width: 250px;
+  padding: 18px;
+  font-family: times, serif;
+  color: @text;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  .logo {
+    a {
+      display: block;
+      height: 100px;
+      border: 8px solid @text;
+      text-align: center;
+      font-size: 100px;
+      line-height: 1;
+      text-decoration: none;
+      color: @text;
+    }
+  }
+  .slogan a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    // border: 1px solid @text;
+    background: @text;
+    color: @secondary;
+    padding-bottom: 8px;
+  }
+  ul {
+    list-style: none;
+    margin: 28px 0;
+    padding: 0;
+    a {
+      color: @text;
+      border-bottom: 1px solid @text;
+      line-height: 2.2;
+      display: block;
+      padding-left: 8px;
+      text-decoration: none;
+      font-size: 1.2em;
+      &:hover,
+      &:focus {
+        background: @lighter;
+        outline: none;
+        color: #c94e50;
+      }
+    }
+  }
+}
+
+/* Shown menu */
+.menu-open .menu-wrap {
+  opacity: 1;
+}
+
+.menu-open .content-wrap {
+  -webkit-transform: translate3d(300px,60px,0);
+  transform: translate3d(300px,60px,0);
 }
