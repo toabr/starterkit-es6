@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: "/dist",
+    publicPath: "./dist",
     filename: "[name].min.js",
   },
   module: {
@@ -58,7 +58,11 @@ module.exports = {
     }, {
       test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/,
       use: [{
-        loader: "file-loader"
+        loader: "file-loader",
+        options: {
+          // name: '[path][name].[ext]',
+          publicPath: './'
+        }
       }]
     }]
   },
@@ -75,11 +79,11 @@ module.exports = {
   plugins: debug ? [
     new HtmlWebpackPlugin({
       title: 'StarterKit',
-      minify: {
-        collapseWhitespace: true
-      },
+      // minify: {
+      //   collapseWhitespace: true
+      // },
       filename: './../index.html',
-      hash: true,
+      // hash: true,
       template: './src/index.html',
     }),
     extractLESS,
