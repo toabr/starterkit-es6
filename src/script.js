@@ -1,6 +1,6 @@
-const css = require('./styles.less');
+import "./style.scss";
 
-console.log('###  works  ###');
+console.log('###  working  ###');
 
 document.getElementById('menu-btn').addEventListener('click', () => {
   console.log('click');
